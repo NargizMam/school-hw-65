@@ -16,7 +16,7 @@ import {Link} from "react-router-dom";
 import {Grid} from "@mui/material";
 
 const drawerWidth = 240;
-const navItems = ['home', 'scheme', 'position', 'employees', 'admin'];
+const navItems = ['home', 'scheme', 'positions', 'employees', 'admin'];
 
 const   Toolbars = () =>  {
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -62,7 +62,7 @@ const   Toolbars = () =>  {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        <Link to={'/'}style={{ color: '#fff',
+                        <Link to={'/'} style={{ color: '#fff',
                             textTransform: 'capitalize',
                             textDecoration: 'none'}}>
                             Educational complex
@@ -72,7 +72,7 @@ const   Toolbars = () =>  {
                             textTransform: 'capitalize'} }}>
                         {navItems.map((item) => (
                             <Button key={item} >
-                                <Link to={item} style={{ color: '#fff',textDecoration: 'none' }}>
+                                <Link to={'schools/'+ item} style={{ color: '#fff',textDecoration: 'none' }}>
                                     {item}
                                 </Link>
                             </Button>
