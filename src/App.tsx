@@ -7,26 +7,7 @@ import Admin from './components/Admin/Admin';
 
 function App() {
 
-    // const fetchPages  = useCallback(async () => {
-    //     try {
-    //         setLoading(true);
-    //         const pagesResponse = await axiosApi.get<PagesList>('schools.json');
-    //         const pages = pagesResponse.data;
-    //         if(!pages){
-    //             setPageNames([]);
-    //             return;
-    //         }
-    //         const pageNames = Object.keys(pages).map(pName => {
-    //             return pName;
-    //         });
-    //         setPageNames(pageNames);
-    //     }finally {
-    //         setLoading(false);
-    //     }
-    // },[]);
-    // useEffect(() => {
-    //     fetchPages().catch(console.error);
-    // }, [fetchPages]);
+
   return (
    <>
        <header>
@@ -35,8 +16,8 @@ function App() {
        <main>
            <Routes>
                <Route path="/" element={(<Home/>)}/>
-               <Route path="/schools" element={(<Home />)}>
-                   <Route path="/schools/:id" element={(<Home />)}/>
+               <Route path="/schools" element={(<Home/>)}>
+                   <Route path="/schools/:id" element={(<Home/>)}/>
                </Route>
                <Route path="/schools/admin" element={(<Admin/>)}/>
                <Route path="*" element={(

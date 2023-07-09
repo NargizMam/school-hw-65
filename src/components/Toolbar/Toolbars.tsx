@@ -62,7 +62,7 @@ const   Toolbars = () =>  {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        <Link to={'/'} style={{ color: '#fff',
+                        <Link to={'/schools'} style={{ color: '#fff',
                             textTransform: 'capitalize',
                             textDecoration: 'none'}}>
                             Educational complex

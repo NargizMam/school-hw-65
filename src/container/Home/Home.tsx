@@ -3,7 +3,6 @@ import {Container, Grid, Typography} from "@mui/material";
 import Spinner from "../../components/Spinner/Spinner";
 import axiosApi from "../../axiosApi";
 import {useLocation} from "react-router-dom";
-import Box from "@mui/material/Box";
 
 const Home = () => {
     const location = useLocation();
