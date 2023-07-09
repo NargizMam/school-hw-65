@@ -24,7 +24,7 @@ const Home = () => {
         }finally {
             setLoading(false);
         }
-    },[location.pathname]);
+    },[location]);
     useEffect(() => {
         fetchPages().catch(console.error);
     }, [fetchPages]);
