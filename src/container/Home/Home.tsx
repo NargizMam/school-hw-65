@@ -15,6 +15,9 @@ const Home = () => {
     const fetchPages = useCallback(async ()=> {
         try {
             setLoading(true);
+            if(location.pathname === '/schools' || location.pathname === '/'){
+                location.pathname = 'schools/home'
+            }
             const response = await axiosApi(`${location.pathname}.json`);
             const pages = response.data;
             setPageInfo(pages);
