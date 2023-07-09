@@ -6,7 +6,6 @@ import {useLocation} from "react-router-dom";
 
 const Home = () => {
     const location = useLocation();
-    console.log(location.pathname);
     const [loading, setLoading] = useState(false);
 
     const [pageInfo, setPageInfo] = useState({
