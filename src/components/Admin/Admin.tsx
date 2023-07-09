@@ -32,7 +32,7 @@ const Admin = () => {
     }, [fetchPages]);
 
     return (
-        <div className='container'>
+        <div className='container' style={{margin: 100}}>
             {loading ? <Spinner/> : null}
             <p>Выберите действие</p>
             <NavLink className='navbar-toggler'
@@ -43,7 +43,8 @@ const Admin = () => {
                      style={{textTransform: 'uppercase', marginLeft:20}}
                      to={`/edit-page/:id`}
             >Edit page</NavLink>
-            <PageForm pageNames={pageNames}/>
+            <br/>
+            <PageForm pageNames={pageNames} />
         </div>
     );
 };

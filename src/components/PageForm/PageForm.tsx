@@ -34,7 +34,7 @@ const AdminsPage: React.FC<Props> = ({pageNames}) => {
         const fetchData = async ()=> {
             try {
                 setLoading(true);
-                const response = await axiosApi(`/pages/${selectPage}.json`);
+                const response = await axiosApi(`/schools/${selectPage}.json`);
                 setPage(response.data);
             }finally {
                 setLoading(false);
@@ -47,9 +47,9 @@ const AdminsPage: React.FC<Props> = ({pageNames}) => {
     const submitForm = async (e: React.FormEvent)=> {
         e.preventDefault();
         try{
-            await axiosApi.put(`pages/${selectPage}.json`, page)
+            await axiosApi.put(`schools/${selectPage}.json`, page)
         }finally {
-            navigate(`/pages/${selectPage}`)
+            navigate(`/schools/${selectPage}`)
         }
     };
     return (
@@ -59,11 +59,14 @@ const AdminsPage: React.FC<Props> = ({pageNames}) => {
                 <div className="form-group">
                     <label htmlFor="exampleFormControlSelect2">Select pages</label><br/>
                     <select  className="form" id="exampleFormControlSelect2" onChange={getSelectPage} >
+                        <option value="value1">Выберите страницу</option>
                         {options}
                     </select>
                 </div>
+                <hr/>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Pages name</label>
+                    <br/>
                     <input type="text" className="form-control col-6"
                            name="title"
                            id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -71,8 +74,10 @@ const AdminsPage: React.FC<Props> = ({pageNames}) => {
                            onChange={editPage}
                     />
                 </div>
+                <hr/>
                 <div className="form-group">
                     <label htmlFor="exampleInputPassword1">Content</label>
+                    <br/>
                     <textarea className="form-control col-6 "
                               name="content"
                               id="exampleInputPassword1"
