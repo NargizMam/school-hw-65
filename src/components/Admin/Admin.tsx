@@ -1,5 +1,4 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import { NavLink } from 'react-router-dom';
 import axiosApi from "../../axiosApi";
 import {PagesList} from "../../type";
 import PageForm from "../PageForm/PageForm";
@@ -34,15 +33,6 @@ const Admin = () => {
     return (
         <div className='container' style={{margin: 100}}>
             {loading ? <Spinner/> : null}
-            <p>Выберите действие</p>
-            <NavLink className='navbar-toggler'
-                     style={{textTransform: 'uppercase', marginLeft:20}}
-                     to={`/new-page`}
-            >New page</NavLink>
-            <NavLink className='navbar-toggler'
-                     style={{textTransform: 'uppercase', marginLeft:20}}
-                     to={`/edit-page/:id`}
-            >Edit page</NavLink>
             <br/>
             <PageForm pageNames={pageNames} />
         </div>
